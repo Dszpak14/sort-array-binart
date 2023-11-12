@@ -1,0 +1,52 @@
+class Solution:	
+	def binarysearch(self, arr, n, k):
+		Start, End = 0, n-1
+		while(Start <= End):
+		    Mid = (Start + End)//2
+		    if(arr[Mid] == k):
+		        return Mid
+		    elif(arr[Mid] < k):
+		        Start = Mid+1
+		    else:
+		        End = Mid-1
+		return -1
+
+
+#{ 
+ # Driver Code Starts
+#Initial template for Python
+
+if __name__ == '__main__':
+    t=int(input())
+    for i in range(t):
+        n=int(input())
+        arr=list(map(int, input().strip().split(' ')))
+        k=int(input())
+        ob = Solution()
+        print (ob.binarysearch(arr, n, k))
+
+
+# } Driver Code Ends
+
+class Solution:
+     def sort012(self,arr,n):
+        i=0
+        ones = 0
+        twos = 0
+        zeros = 0
+        for num in arr:
+            if num == 1:
+                ones += 1
+            elif num == 2:
+                twos += 1
+            else:
+                zeros += 1
+        for z in range(zeros):
+            arr[i] = 0
+            i += 1
+        for o in range(ones):
+            arr[i] = 1
+            i += 1
+        for t in range(twos):
+            arr[i] = 2
+            i += 1
